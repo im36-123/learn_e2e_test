@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+	<form id="form">
+		<fieldset>
+			<legend>name</legend>
+			<input id="text" name="text" type="text" required />
+		</fieldset>
+		<fieldset>
+			<legend>radio buttons</legend>
+			<label>
+				<input name="radio" value="1" type="radio" checked />
+				<span>radio1</span>
+			</label>
+			<label>
+				<input name="radio" value="2" type="radio" />
+				<span>radio2</span>
+			</label>
+			<label>
+				<input id="radio3" name="radio" value="3" type="radio" />
+				<span>radio3</span>
+			</label>
+		</fieldset>
+		<fieldset class="check">
+			<legend>checkbox</legend>
+			<label>
+				<input name="check" value="1" type="checkbox" />
+				<span>check1</span>
+			</label>
+			<label>
+				<input name="check" value="2" type="checkbox" />
+				<span>check23</span>
+			</label>
+			<label>
+				<input name="check" value="3" type="checkbox" />
+				<span>check3</span>
+			</label>
+		</fieldset>
+		<fieldset>
+			<legend>options</legend>
+			<select>
+				<option value="1">options1</option>
+				<option value="2">options2</option>
+				<option value="3">options3</option>
+			</select>
+		</fieldset>
+		<input id="submit" type="button" value="送信" />
+	</form>
+
+	<script>
+		const button = document.querySelector('#submit');
+		const name = document.querySelector('#text');
+		button.addEventListener('click', () => {
+			sessionStorage.setItem('name', name.value);
+			location.href = '/name.html';
+		})
+	</script>
+</body>
+
+</html>
